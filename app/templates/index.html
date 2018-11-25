@@ -1,11 +1,8 @@
-<html>
-    <head>
-        <title>
-            {{title}} -- Manga Database
-        </title>
-    </head>
+{% extends "base.html" %}
 
-        <body>
-            <h1>Hello, {{user.username}}!</h1>
-        </body>
-</html>
+{% block content %}
+    <h1>Hi, {{ user.username }}!</h1>
+    {% for manga in mangas %}
+    <div><p>{{ manga.title }} -- {{ manga.author }}</p></div>
+    {% endfor %}
+{% endblock %}
